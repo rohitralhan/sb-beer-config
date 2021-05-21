@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: sb-beer
+spec:
+  template:
+    spec:
+      containers:
+        # Replace {username} with your repository username
+        - image: quay.io/rralhan/s2i-tekton:latest
+      imagePullSecrets:
+      - name: quay-auth-secret  
